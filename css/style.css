@@ -1,0 +1,518 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+body {
+    background: url("../images/background.jpg") no-repeat center center fixed;
+}
+
+@font-face {
+    font-family: 'DroidSerifRegular'; /* Гарнитура шрифта */
+    src: url(../fonts/DroidSerifRegular.ttf); /* Путь к файлу со шрифтом */
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'DroidSerifBold'; /* Гарнитура шрифта */
+    src: url(../fonts/DroidSerifBold.ttf); /* Путь к файлу со шрифтом */
+    font-style: normal;
+    font-weight: normal;
+}
+
+/********ХЭДЕР****************************/
+#header {
+    width:100%;
+    height: 155px;
+    background-color: #000000;
+    margin-top: 25px;
+}
+#headContent {
+    width: 980px;
+    height: 155px;
+    margin: 0 auto;
+}
+#imgOwen {
+    float: left;
+    width: 155px;
+    height: 155px;
+    background: url("../images/OwenAvat3.png") round;
+}
+#fotTextHead {
+    float: left;
+    height: 100px;
+    margin-left: 20px;
+    padding-top: 55px;
+    text-align: center;
+}
+#fotTextHead h4 {
+    color: white;
+    margin: 0 auto;
+
+}
+#fotTextHead h1 {
+    color: red;
+    margin: 0;
+    font-family: 'DroidSerifRegular', serif;
+}
+
+#menuHead {
+    display: inline-block;
+    margin-left: 110px;
+    padding-top: 85px;
+}
+.menu {
+    padding: 0;
+    margin-top: 0;
+}
+.menu li {
+    text-decoration: none;
+    list-style-type: none;
+    display: inline;
+    font-family: Arial, serif;
+    font-size: 14px;
+    color: #ffffff;
+    margin-right: 40px;
+    transition: color 0.5s ease
+}
+.menu li:last-child {
+    margin-right: 0;
+}
+.menu li:hover {
+    color:  darkred;
+    cursor: pointer;
+}
+.menu #main {
+    color:  darkred;
+}
+
+/***************Конец ХЭДЕРА******************/
+
+
+/***************Контент******************/
+#Content{
+    width: 980px;
+    height: 515px;
+    margin: 25px auto 0 auto;
+    background-color: rgba(0,0,0,0.8);
+    }
+#fotoMainPage {
+    display: inline-block;
+    margin-top: 50px;
+    margin-left: 60px;
+    margin-right: 50px;
+    width: 307px;
+    height: 408px;
+    background: url("../images/Owenmain2.png") round;
+    border: solid 1px white;
+}
+#textMain {
+    display: inline-block;
+    width: 537px;
+    height: 350px;
+    vertical-align: top;
+    margin-top: 40px;
+    color: white;
+    text-align: justify;
+}
+#textMain h1 {
+    font-family: 'DroidSerifRegular', serif;;
+    font-size: 48px;
+    padding-right: 30px;
+}
+#textMain p {
+    font-family: 'DroidSerifRegular', serif;
+    font-size: 15px;
+    padding-right: 30px;
+}
+#podrobnee {
+    width: 507px;
+    height: 70px;
+    background-color: #394C75;
+    margin-top: 40px;
+    font-family: 'DroidSerifRegular', serif;
+    font-size: 15px;
+    line-height: 70px;
+    color: #C0C9C8;
+}
+#podrobnee span {
+    margin-left: 50px;
+    cursor: pointer;
+}
+/***************Типа отзывы о Майкле других футболистов******************/
+#aboutHim {
+    width: 980px;
+    min-height: 290px;
+    background-color: rgba(0,0,0,0.8);
+    margin: 20px auto 0 auto;
+}
+#cavichki {
+    float: left;
+    width: 67px;
+    height: 49px;
+    background: url("../images/кавычки.png") round;
+}
+#textAbout {
+    display: inline-block;
+    width: 700px;
+    color: white;
+    font-size: 15px;
+    font-family: 'DroidSerifRegular', serif;
+    vertical-align: top;
+    margin-left: 20px;
+}
+.about p {
+    margin: 0;
+}
+#about1 {
+    margin-top: 0;
+}
+.about {
+    margin-top: 20px;
+}
+.about span {
+    color: #C32D2D;
+}
+
+#cavichki2 {
+    display: inline-block;
+    width: 67px;
+    height: 49px;
+    margin-top: 140px;
+    background: url("../images/кавычки.png") round;
+    float: right;
+}
+#wrapAbout {
+    width: 858px;
+    height: 124px;
+    margin: 0 auto;
+    padding-top: 56px;
+}
+/***************Конец Типа отзывы о Майкле других футболистов******************/
+
+/***************Лучшие голы******************/
+#achieve {
+    width: 980px;
+    height: 295px;
+    margin: 40px auto 0 auto;
+    background-color: rgba(0,0,0,0.8);
+}
+#textAchieve {
+    color: white;
+    font-size: 28px;
+    font-family: 'DroidSerifRegular', serif;
+    padding-top: 40px;
+    padding-left: 120px;
+}
+#slider1 {
+    position:relative;  /* Containers need relative or absolute position. */
+    margin: 0 auto;
+    width: 760px;
+    height:170px;
+}
+#footer {
+    width: 100%;
+    height: 50px;
+    background-color: rgba(0,0,0,0.8);
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+/***********Вторая страница**********/
+
+#page2 {
+    width: 980px;
+    min-height: 1000px;
+    margin: 20px auto;
+    background-color: rgba(0,0,0,0.8);
+    padding-bottom: 50px;
+    display: none;
+}
+#textClubs {
+    color: darkred;
+    font-family: 'DroidSerifRegular', serif;
+    font-size: 35px;
+    padding-top: 30px;
+    padding-left: 60px;
+}
+#textWhatClubs {
+    font-family: 'DroidSerifRegular', serif;
+    font-size: 15px;
+    color: white;
+    padding: 20px 60px 0 60px;
+}
+.wrapClubs {
+    height: 306px;
+    margin-top: 50px;
+}
+
+/*****Ливерпуль фото и текст ******/
+#fotoLiv {
+    width: 228px;
+    height: 304px;
+    background: url("../images/OwenLiv.png") round;
+    margin-left: 60px;
+    margin-right: 50px;
+    border: 1px solid white;
+    float: left;
+}
+#textLiv {
+    color: white;
+    text-align: justify;
+    margin-right: 50px;
+}
+#textLiv span {
+    font-size: 28px;
+    font-family: 'DroidSerifRegular', serif;
+}
+#textLiv p {
+    font-size: 15px;
+    font-family: 'DroidSerifRegular', serif;
+}
+.clear {
+    clear: both;
+}
+
+/*******Реал фото и текст****/
+#fotoReal {
+    width: 228px;
+    height: 304px;
+    background: url("../images/Real.jpg") round;
+    margin-left: 60px;
+    margin-right: 50px;
+    border: 1px solid white;
+    float: left;
+}
+#textReal {
+    color: white;
+    margin-right: 50px;
+    text-align: justify;
+}
+#textReal span {
+    font-size: 28px;
+    font-family: 'DroidSerifRegular', serif;
+}
+#textReal p {
+    font-size: 15px;
+    font-family: 'DroidSerifRegular', serif;
+}
+
+/*******Ньюкасл фото и текст****/
+#fotoNewcastle {
+    width: 228px;
+    height: 304px;
+    background: url("../images/Newcastle.jpg") round;
+    margin-left: 60px;
+    margin-right: 50px;
+    border: 1px solid white;
+    float: left;
+}
+#textNewcastle {
+    color: white;
+    margin-right: 50px;
+    text-align: justify;
+}
+#textNewcastle span {
+    font-size: 28px;
+    font-family: 'DroidSerifRegular', serif;
+}
+#textNewcastle p {
+    font-size: 15px;
+    font-family: 'DroidSerifRegular', serif;
+}
+
+/*******Ман фото и текст****/
+#fotoMan {
+    width: 228px;
+    height: 304px;
+    background: url("../images/МЮ.jpg") round;
+    margin-left: 60px;
+    margin-right: 50px;
+    border: 1px solid white;
+    float: left;
+}
+#textMan {
+    color: white;
+    margin-right: 50px;
+    text-align: justify;
+}
+#textMan span {
+    font-size: 28px;
+    font-family: 'DroidSerifRegular', serif;
+}
+#textMan p {
+    font-size: 15px;
+    font-family: 'DroidSerifRegular', serif;
+}
+
+/*******Сток фото и текст****/
+#fotoStoke {
+    width: 228px;
+    height: 304px;
+    background: url("../images/Stoke.png") round;
+    margin-left: 60px;
+    margin-right: 50px;
+    border: 1px solid white;
+    float: left;
+}
+#textStoke {
+    color: white;
+    margin-right: 50px;
+    text-align: justify;
+}
+#textStoke span {
+    font-size: 28px;
+    font-family: 'DroidSerifRegular', serif;
+}
+#textStoke p {
+    font-size: 15px;
+    font-family: 'DroidSerifRegular', serif;
+}
+
+/*********page3************/
+#page3 {
+    width: 980px;
+    min-height: 800px;
+    margin: 20px auto;
+    padding-bottom: 50px;
+    display: none;
+    background-color: rgba(0,0,0,0.8);
+}
+.wrapFoto {
+    height: 750px;
+    margin-bottom: 30px;
+    background-color: rgba(0,0,0,0.8);
+}
+.teamName{
+    text-align: center;
+    padding-top: 50px;
+}
+#secondText {
+    padding-top: 0;
+    margin-bottom: 20px;
+}
+.textLivGal {
+    display: inline-block;
+    color: white;
+    font-size: 28px;
+    font-family: 'DroidSerifRegular', serif;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+#livText {
+    color: darkred;
+}
+.tire {
+    display: inline-block;
+    font-size: 30px;
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#real, #newc, #mu, #stoke, #eng {
+    display: none;
+}
+
+/*********page4************/
+#page4 {
+    width: 980px;
+    min-height: 400px;
+    margin: 20px auto;
+    padding-bottom: 50px;
+    display: none;
+    background-color: rgba(0,0,0,0.8);
+}
+#txtWrite span {
+    font-size: 30px;
+    font-family: 'DroidSerifRegular', serif;
+    color: darkred;
+}
+#txtWrite {
+    font-size: 14px;
+    font-family: 'DroidSerifRegular', serif;
+    color: white;
+    padding-top: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+#txtWrite p {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+#txtWrite, #wrap {
+    display: inline-block;
+    vertical-align: top;
+}
+#wrap {
+    width: 550px;
+    height: 280px;
+    padding-top: 40px;
+    float: right;
+    margin-right: 50px;
+}
+#name, #email, #theme {
+    display: block;
+    width: 540px;
+    height: 25px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    border: 0 solid;
+    padding: 5px;
+    font-family: 'DroidSerifRegular', serif;
+}
+#butSubmit {
+    display: block;
+    width: 100px;
+    height: 30px;
+    float: right;
+    font-size: 14px;
+    font-family: 'DroidSerifRegular', serif;
+    color: darkred;
+}
+textarea {
+    display: block;
+    width: 540px;
+    min-height: 150px;
+    margin-bottom: 5px;
+    resize: none;
+    font-size: 14px;
+    font-family: 'DroidSerifRegular', serif;
+    border: 0 solid;
+    padding: 5px;
+}
+
+/*******Footer**********/
+#socSeti {
+    width: 185px;
+    margin: 0 auto;
+    height: 50px;
+    line-height: 50px;
+}
+#txtSocSeti {
+    color: white;
+    font-size: 12px;
+    font-family: 'DroidSerifRegular', serif;
+    display: inline-block;
+    margin-right: 10px;
+}
+#imgTwitter {
+    width: 25px;
+    height: 25px;
+    background: url("../images/twitter.png") round;
+    display: inline-block;
+    vertical-align: middle;
+}
+#imgVK {
+    width: 25px;
+    height: 25px;
+    background: url("../images/vkontakte-128x128.png") round;
+    display: inline-block;
+    vertical-align: middle;
+}
+#imgInsta {
+    width: 25px;
+    height: 25px;
+    background: url("../images/insta.png") round;
+    display: inline-block;
+    vertical-align: middle;
+}

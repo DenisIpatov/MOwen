@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Майкл Оуэн</title>
+
+    <link href="css/style.css" type="text/css" rel="stylesheet"/>
+    <!-- <link rel="stylesheet" href="fancybox/jquery.fancybox.css" type="text/css" media="screen" /> -->
+    <link rel="stylesheet" type="text/css" href="css/thumbelina.css"/>
+
+    <!-- <link rel="stylesheet" href="fancybox/helpers/jquery.fancybox-buttons.css" type="text/css" media="screen" /> -->
+
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+
+    <!--<script type="text/javascript" src="fancybox/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="fancybox/helpers/jquery.fancybox-buttons.js"></script>
+    -->
+    <script type="text/javascript" src="js/thumbelina.js"></script>
+
+    <!--<link rel="stylesheet" media="screen" type="text/css" href="css/layout.css" />
+    <link rel="stylesheet" media="screen" type="text/css" href="css/custom.css" /> -->
+    <link rel="stylesheet" media="screen" type="text/css" href="css/spacegallery.css" />
+    <script type="text/javascript" src="js/eye.js"></script>
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript" src="js/spacegallery.js"></script>
+<!--    <script type="text/javascript" src="js/layout.js"></script> -->
+
+    <script> ///скрипт для движения карусели
+        $(function(){
+            $('#slider1').Thumbelina({
+                $bwdBut:$('#slider1 .left'),    // Selector to left button.
+                $fwdBut:$('#slider1 .right')    // Selector to right button.
+            });
+            $('#slider2').Thumbelina({
+                $bwdBut:$('#slider2 .left'),    // Selector to left button.
+                $fwdBut:$('#slider2 .right')    // Selector to right button.
+            });
+        })
+    </script>
+    <script>            //скрипт показывает/скрывает страницы из меню
+    function pages(page) {
+        if ($("#"+page).is(":visible")) {
+            return;
+        }
+        else {
+            $( ".pages:visible" ).effect('fade', 1000, function(){
+                $( "#"+page ).fadeIn(1000);
+            } );
+        }
+
+        if (page=="page1") {
+            $('.menuBut').css('color', 'white');
+            document.getElementById('main').style.color='#8B0000';
+        }
+        else if (page=="page2")  {
+            $('.menuBut').css('color', 'white');
+            document.getElementById('career').style.color='#8B0000';
+        }
+        else if (page=="page3")  {
+            $('.menuBut').css('color', 'white');
+            document.getElementById('photo').style.color='#8B0000';
+        }
+        else {
+            $('.menuBut').css('color', 'white');
+            document.getElementById('contact').style.color='#8B0000';
+        }
+
+                //узнать как сделать плавное появление футера
+    }
+    </script>  <!--скрипт показывает/скрывает страницы из меню -->
+
+    <script>            //скрипт показывает/скрывает страницы из меню
+    function teams(team) {
+        if ($("#"+team).is(":visible")) {
+            return;
+        }
+        else {
+            $( ".teams:visible" ).effect('fade', 1000, function(){
+                $( "#"+team ).fadeIn(1000);
+            } );
+        }
+
+        if (team=="liv") {
+            $('.textLivGal').css('color', '#FFFFFF');
+            document.getElementById('livText').style.color='#8B0000';
+        }
+        else if (team=="real")  {
+            $('.textLivGal').css('color', '#FFFFFF');
+            document.getElementById('realText').style.color='#8B0000';
+        }
+        else if (team=="newc")  {
+            $('.textLivGal').css('color', '#FFFFFF');
+            document.getElementById('newcText').style.color='#8B0000';
+        }
+        else if (team=="mu")  {
+            $('.textLivGal').css('color', '#FFFFFF');
+            document.getElementById('muText').style.color='#8B0000';
+        }
+        else if (team=="stoke")  {
+            $('.textLivGal').css('color', '#FFFFFF');
+            document.getElementById('stokeText').style.color='#8B0000';
+        }
+        else if (team=="eng")  {
+            $('.textLivGal').css('color', '#FFFFFF');
+            document.getElementById('engText').style.color='#8B0000';
+        }
+    }
+        </script>  <!--скрипт показывает/скрывает страницы из меню -->
+
+    <script>  //скрипт для истории по страницам
+    $(document).ready(function(){
+        window.history.replaceState({id: 'page1'}, null, '#main');  //вставляем стартовую страницу в историю
+
+        window.addEventListener('popstate', function(e){
+            pages(e.state.id);
+        });
+
+        $('.menuBut').click(function() {
+            var id=$(this).attr('id');
+            if (id=='main') {
+                window.history.pushState({id: 'page1'}, null, '#main');
+            }
+            else if ((id=='career')||(id=='podrobnee')) {
+                window.history.pushState({id: 'page2'}, null, '#career');
+            }
+            else if (id=='photo') {
+                window.history.pushState({id: 'page3'}, null, '#photo');
+            }
+            else if (id=='contact') {
+                window.history.pushState({id: 'page4'}, null, '#contacts');
+            }
+        });
+    });
+    </script>
+
+</head>
+<body>
+
+<div id="header">
+    <div id="headContent">
+        <div id="imgOwen"></div>
+        <div id="fotTextHead">
+            <h4>Легенда футбола</h4>
+            <h1>МАЙКЛ ОУЭН</h1>
+        </div>
+
+        <div id="menuHead">
+            <ul class="menu">
+                <li class="menuBut" id="main" onclick="pages('page1')">ГЛАВНАЯ</li>
+                <li class="menuBut" id="career" onclick="pages('page2')">КАРЬЕРА</li>
+                <li class="menuBut" id="photo" onclick="pages('page3')">ФОТО</li>
+                <li class="menuBut" id="contact" onclick="pages('page4')">КОНТАКТЫ</li>
+            </ul>
+        </div>
+    </div>
+</div> <!-- End header -->
+
+<div id="page1" class="pages">
+<div id="Content">
+    <div id="fotoMainPage"></div>
+    <div id="textMain">
+        <h1>МАЙКЛ ОУЭН</h1>
+        <p>Легендарный нападающий сборной Англии. Выступал за Ливерпуль, Реал Мадрид, Ньюкасл,
+        Манчестер Юнайтед и Сток Сити. За сборную в 89 матчах забил 40 голов. В 2001 году был
+        признан лучшим футболистом Европы.</p>
+        <p>Свой первый профессиональный контракт заключил с Ливерпулем в 17 лет.
+            В своём первом же матче Премьер-Лиги против Уимблдона, Майкл открыл счёт своим
+            голам в Англии и был признан лучшим игроком матча, а также стал самым молодым
+            игроком Ливерпуля, забивавшим в АПЛ.</p>
+        <div class="menuBut" id="podrobnee"><span onclick="pages('page2')">ПОДРОБНЕЕ</span></div>
+    </div>
+</div> <!----End Content ---->;
+
+    <div id="aboutHim">
+        <div id="wrapAbout">
+            <div id="cavichki"></div>
+            <div id="textAbout">
+                <div class="about" id="about1"><p>Он один из лучших нападающих в истории сборной Англии.</p>
+                    <span>Гари Линекер</span>
+                </div>
+                <div class="about"><p>У Майкла была фантастическая карьера. Я горд тем, что мне посчастливилось выходить
+                    вместе с ним на футбольное поле.</p>
+                    <span>Фрэнк Лэмпард</span>
+                </div>
+                <div class="about"><p>Неутомимый труженик, постоянно стремящийся к вершине, Майкл заслужил тот самый гол и славу Кубка мира.</p>
+                        <span>Стивен Джеррард</span>
+                </div>
+
+            </div>
+            <div id="cavichki2"></div>
+        </div> <!-- End wrapAbout -->
+    </div>  <!-- End aboutHim -->
+
+    <div id="achieve">
+        <div id="textAchieve">Лучшие голы</div>
+        <div id="slider1" class="slider">
+            <div class="thumbelina-but horiz left"></div>
+                <ul>
+                        <li style="display: inline-block;"><iframe width="210" height="157" src="https://www.youtube.com/embed/aok12fltqHI"
+                                                                   frameborder="0" allowfullscreen></iframe></li>
+                        <li style="display: inline-block;"><iframe width="280" height="157" src="https://www.youtube.com/embed/GOCqKMmWThY"
+                                                                   frameborder="0" allowfullscreen></iframe></li>
+                        <li style="display: inline-block;"><iframe width="210" height="157" src="https://www.youtube.com/embed/WJ0uIKjommQ"
+                                                                   frameborder="0" allowfullscreen></iframe></li>
+                        <li style="display: inline-block;"><iframe width="210" height="157" src="https://www.youtube.com/embed/6nDezbrezQk"
+                                                                   frameborder="0" allowfullscreen></iframe></li>
+                        <li style="display: inline-block;"><iframe width="210" height="157" src="https://www.youtube.com/embed/Y0fCBImE638"
+                                                                   frameborder="0" allowfullscreen></iframe></li>
+                        <li style="display: inline-block;"><iframe width="210" height="157" src="https://www.youtube.com/embed/R0MwLQvpO44"
+                                                                   frameborder="0" allowfullscreen></iframe></li>
+                        <li style="display: inline-block;"><iframe width="280" height="157" src="https://www.youtube.com/embed/XC5DIDMA4fE"
+                                                                   frameborder="0" allowfullscreen></iframe></li>
+                </ul>
+            <div class="thumbelina-but horiz right"></div>
+
+        </div>
+    </div>
+</div> <!----End page1 ---->;
+
+<div id="page2" class="pages">
+    <div id="textClubs">КЛУБЫ</div>
+    <div id="textWhatClubs">За свою карьеру Майкл Оуэн выступал за "Ливерпуль", "Реал Мадрид",
+    "Ньюкасл", "Манчестер Юнайтед" и "Сток Сити". </div>
+    <!--Ливерпуль -->
+    <div class="wrapClubs">
+        <div id="fotoLiv"></div>
+        <div id="textLiv"><p><span>Ливерпуль</span></p>
+            <p>За "Ливерпуль" Майкл провел 8 сезонов, каждый год становясь лучшим бомбардиром клуба
+            (за исключением дебютного сезона 1996/97, когда провел 2 матча).
+                Дебют за основную команду состоялся 6 мая 1997 года в матче против "Уимблдона",
+                в котором Майл забил свой первый гол в Английской премьер-лиге. Всего в АПЛ за "Ливерпуль"
+            Майкл провел 216 игр, отличился 118 раз. Именно играя за "Ливерпуль", Майкл стал обладателем "Золотого
+                Мяча" в 2001 году, присуждаемому лучшему игроку Европы.</p>
+                <p>Вместе с клубом стал обладателем Кубка Англии (2000/01),
+            Суперкубка Англии (2001), дважды Кубка футбольной лиги (2000/01, 2002/03),
+                Кубка УЕФА (2000/01) и Суперкубка УЕФА (2001).</p>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <!--Реал -->
+    <div class="wrapClubs">
+        <div id="fotoReal"></div>
+        <div id="textReal"><p><span>Реал Мадрид</span></p>
+            <p>После окончания сезона 2003/04 новым главным тренером "Ливерпуля" стал испанец Рафаэль Бенитес.
+                Оуэн публично заявлял, что хотел бы остаться в "Ливерпуле". Однако реакции клуба и
+                нового главного тренера не последовало. После этого Майкл покинул клуб и перебрался в Реал.</p>
+            <p>В мадридском клубе Оуэн был вынужден смириться с ролью запасного,
+                однако сезон стоит признать успешным. Он занял первое место
+                среди всех игроков испанского чемпионата по соотношению «забитые голы/количество
+                проведённых на поле минут». Он забил там 16 мячей.
+                Летом 2005 года Майкл заявил, что покинет Испанию. Ни для кого не секрет, что он хотел вернуться в
+                «Ливерпуль». Проблема заключалась в трансферной стоимости - 11 миллионов
+                фунтов. Боясь остаться без игровой практики перед чемпионатом мира, Майкл принимает предложение
+            Ньюкасла.</p>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <!--Ньюкасл -->
+    <div class="wrapClubs">
+        <div id="fotoNewcastle"></div>
+        <div id="textNewcastle"><p><span>Ньюкасл</span></p>
+            <p>Карьеру Майкла в Ньюкасле сложно назвать успешной. Игрока мучали травмы, сезон 2006/07
+            был пропущен почти полностью в связи с нелепой травмой, полученной на Чемпионате Мира,
+                поездку на который Майкл назовет впоследствии ошибкой. Низкая результативность
+                Майкла относительно его самого в лучшие годы объясняется слабой полузащитой клуба, в результате чего
+                ему самому приходилось подыгрывать своим партнерам по команде. Итогом 4-хлетнего
+                пребывания Майкла в Ньюкасле стал вылет клуба из АПЛ.</p>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <!--Ньюкасл -->
+    <div class="wrapClubs">
+        <div id="fotoMan"></div>
+        <div id="textMan"><p><span>Манчестер Юнайтед</span></p>
+            <p>В начале июля 2009 года появилась сенсационная новость, что Майкл присоединился к «Манчестер Юнайтед».
+                По словам самого нападающего, он не мог упустить шанса вновь заиграть на высочайшем уровне и
+                получить вызов в сборную Англии. Однако Майклу снова пришлось смириться с ролью запасного.
+                Тем не менее, ему удалось запомниться несколькими потрясающими моментами. Например, победным
+                голом на 6-ой добавленной минуте в принципиальном дерби против Манчестер Сити (матч завершился
+                сл счетом 4-3 в пользу МЮ). Также Майкл оформил хэт-трик в матче ЛЧ против Вольфсбурга.</p>
+            <p>За 3 сезона в Манчестер Юнайтед Майкл Оуэн провел 65 игр (с учетом товарищеских игр),
+                в которых отличился 25 раз.</p>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <!--Сток -->
+    <div class="wrapClubs">
+        <div id="fotoStoke"></div>
+        <div id="textStoke"><p><span>Сток Сити</span></p>
+            <p>5 сентября Майкл на правах свободного агента пополнил состав клуба "Сток Сити".
+                19 января Оуэн, выйдя на замену в гостевом матче против "Суонси Сити", забил свой первый гол
+                за "Сток" в премьер-лиге. Этот мяч стал для 33-хлетнего Майкла 150 голом в премьер-лиге.
+                19 марта 2013 на своём официальном сайте футболист объявил о планах завершить игровую
+                карьеру по окончании сезона 2012/13</p>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+</div> <!--End Page2-->
+
+<div id="page3" class="pages">
+    <div class="teamName">
+        <div class="textLivGal" id="livText" onclick="teams('liv')">Ливерпуль</div>
+        <div class="tire">|</div>
+        <div class="textLivGal" id="realText" onclick="teams('real')">Реал Мадрид</div>
+        <div class="tire">|</div>
+        <div class="textLivGal" id="newcText" onclick="teams('newc')">Ньюкасл</div>
+        <div class="tire">|</div>
+        <div class="textLivGal" id="muText" onclick="teams('mu')">Манчестер Юнайтед</div>
+    </div>
+    <div class="teamName" id="secondText">
+        <div class="textLivGal" id="stokeText" onclick="teams('stoke')">Сток Сити</div>
+        <div class="tire">|</div>
+        <div class="textLivGal" id="engText" onclick="teams('eng')">Сборная Англии</div>
+    </div>
+
+    <div class="wrapper">
+                <div id="liv" class="spacegallery teams">
+                    <img src="images/liv1.jpg" alt="" />
+                    <img src="images/liv2.jpg" alt="" />
+                    <img src="images/liv3.jpg" alt="" />
+                    <img src="images/liv5.jpg" alt="" />
+                    <img src="images/liv6.jpg" alt="" />
+                    <img src="images/liv7.jpg" alt="" />
+                    <img src="images/liv8.jpg" alt="" />
+                    <img src="images/liv9.jpg" alt="" />
+                    <img src="images/liv11.jpg" alt="" />
+                    <img src="images/liv12.jpg" alt="" />
+                    <img src="images/liv13.jpg" alt="" />
+                </div>
+
+                <div id="real" class="spacegallery teams">
+                    <img src="images/real1.jpg" alt="" />
+                    <img src="images/real2.jpg" alt="" />
+                    <img src="images/real3.jpg" alt="" />
+                    <img src="images/real4.jpg" alt="" />
+                </div>
+
+                <div id="newc" class="spacegallery teams">
+                    <img src="images/newc1.jpg" alt="" />
+                    <img src="images/newc2.jpg" alt="" />
+                </div>
+
+                <div id="mu" class="spacegallery teams">
+                    <img src="images/mu1.jpg" alt="" />
+                    <img src="images/mu2.jpg" alt="" />
+                    <img src="images/mu3.jpg" alt="" />
+                    <img src="images/mu4.jpg" alt="" />
+                    <img src="images/mu5.jpg" alt="" />
+                    <img src="images/mu6.jpg" alt="" />
+                    <img src="images/mu7.jpg" alt="" />
+                </div>
+
+                <div id="stoke" class="spacegallery teams">
+                    <img src="images/stoke1.jpg" alt="" />
+                    <img src="images/stoke2.jpg" alt="" />
+                    <img src="images/stoke3.jpg" alt="" />
+                    <img src="images/stoke4.jpg" alt="" />
+                    <img src="images/stoke5.jpg" alt="" />
+                    <img src="images/stoke6.jpg" alt="" />
+                </div>
+
+                <div id="eng" class="spacegallery teams">
+                    <img src="images/eng5.jpg" alt="" />
+                    <img src="images/eng6.jpg" alt="" />
+                    <img src="images/eng7.jpg" alt="" />
+                </div>
+    </div>
+
+<script>
+    $('#liv').spacegallery({loadingClass: 'loading'});
+    $('#real').spacegallery({loadingClass: 'loading'});
+    $('#newc').spacegallery({loadingClass: 'loading'});
+    $('#mu').spacegallery({loadingClass: 'loading'});
+    $('#stoke').spacegallery({loadingClass: 'loading'});
+    $('#eng').spacegallery({loadingClass: 'loading'});
+</script>
+</div> <!--End page3 -->
+
+
+<div id="page4" class="pages">
+    <div id="txtWrite">
+        <p><span>ПИШИТЕ!</span></p>
+        <p>Денис Ипатов</p>
+        <p>Россия, Татарстан</p>
+        <p>г.Казань</p>
+        <p>sined@hotmail.ru</p>
+        <p>тел.:8(927)ххх-хх-хх</p>
+    </div>
+    <div id="wrap">
+        <form name="mail" method="POST" action="mail.php" id="mailForm">
+            <input type="text" placeholder="Имя" id="name" name="name" required="required">
+            <input type="text" placeholder="Email" id="email" name="email" required="required">
+            <input type="text" placeholder="Тема" id="theme" name="theme">
+            <textarea name="message" placeholder="Сообщение" required="required"></textarea>
+            <input type="submit" name="butSubmit" id="butSubmit">
+        </form>
+    </div>
+</div>
+
+<div id="footer">
+    <div id="socSeti">
+        <div id="txtSocSeti">Я В СОЦСЕТЯХ</div>
+        <div id="imgTwitter"></div>
+        <div id="imgVK"></div>
+        <div id="imgInsta"></div>
+    </div>
+</div>
+
+</body>
+</html>
